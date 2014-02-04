@@ -2,12 +2,40 @@
 <html>
     
     <head>
+        <meta charset="utf-8">
         <title>title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="lib/jquery-1.6.4.js"></script>
         <script src="lib/jquery.mobile-1.1.0.js"></script>
         <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet">
         <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet">
+
+        <script type="text/javascript">
+            //$(document).ready(function(){
+            $(document).on("pageinit","#suBorcu", function() {
+                var url='http://www.girnebelediyesi.com/webConsumer.php?aboneNo=';
+                var query;
+                $('#suAboneSorgu').click(function(){
+                    $.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
+                    query=$("#suBorcAboneTB").val();
+//console.log( query);
+                    $.getJSON(url+query+"&callback=?")
+                            .done(function( data ) {
+                                $.mobile.loading('hide');
+                                $("#suAboneSonuc").empty();
+                                $("#suAboneSonuc").html('<table id="sonuclar"><tr><th>Su</th><th>Temizlik</th><th>Aydınlatma</th><th>Sağlık</th><th>Kanalizasyon</th><th>Ek Hizmetler</th></tr></table>')
+                                $.each(data,function(i,table){
+                                    $('#sontar').html('Güncel faturanızı son ödeme tarihi: ' +
+                                            table.faturacezatar[0].substr(0, 10));
+                                    $("#sonuclar").append('<tr><td>'+table.su[0]+'</td><td>'+table.cop[0]+
+                                            '</td><td>'+table.ayd[0]+'</td><td>'+
+                                            table.saglik[0]+'</td><td>'+table.kanal[0]+'</td><td>'+table.genelBorc[0]+
+                                            '</td><td>');
+                                });
+                            });
+                });
+            });
+        </script>
     </head>
     
     <body>
@@ -58,17 +86,20 @@
                 <a data-role="button" data-transition="turn" data-theme="b">Geri</a>
             </div>
         </div>
+
+
         <div data-role="page" id="suBorcu" data-theme="b">
             <div data-role="header">
                 <h1>Su Borcu</h1>
             </div>
             <div data-role="content">
                 <div data-role="fieldcontain">
-                    <label for="text3">Abone No ile sorgulama</label>
-                    <input type="text" id="text3">
+                    <label for="suBorcAboneTB">Abone No ile sorgulama</label>
+                    <input type="text" id="suBorcAboneTB">
                 </div>
-                <a data-role="button">Sorgula</a>
-                <div class="div-widget"></div>
+                <a data-role="button" id="suAboneSorgu">Sorgula</a>
+                <span id="sontar"></span>
+                <div class="div-widget" id="suAboneSonuc"></div>
                 <div data-role="fieldcontain">
                     <label for="text4">Kimlik No ile sorgulama</label>
                     <input type="text" id="text4">
