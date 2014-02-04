@@ -3,6 +3,9 @@
     
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <title>title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="lib/jquery-1.6.4.js"></script>
@@ -13,26 +16,58 @@
         <script type="text/javascript">
             //$(document).ready(function(){
             $(document).on("pageinit","#suBorcu", function() {
-                var url='http://www.girnebelediyesi.com/webConsumer.php?aboneNo=';
+                //var url='mobileapp:82/webConsumer.php';
                 var query;
-                $('#suAboneSorgu').click(function(){
-                    $.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
+                $('#suAboneSorgu').click(function(event){
+
+
+                    //$.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
+
                     query=$("#suBorcAboneTB").val();
-//console.log( query);
+                    //console.log( url+query);
+                    //alert(url+query);
+
+                    $.ajax({
+                        url: 'http://www.girnebelediyesi.com/webConsumer.php',
+                        dataType: 'json',
+                        data: { suBorcAboneTB : query,
+                                callback : '?' }})
+                            .done(function (data){
+
+                            //alert(data.su);
+
+                            $("#suAboneSonuc").empty();
+                            $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
+                                                                        '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
+                                                                        '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
+                                                                        '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
+                                                                        '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
+                                                                        '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
+                                                                        '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
+                        });
+
+
+// Perform other work here ...
+
+// Set another completion function for the request above
+
+                    //console.log( query);
+/*
                     $.getJSON(url+query+"&callback=?")
                             .done(function( data ) {
-                                $.mobile.loading('hide');
+                                alert(url+query);
+                                //$.mobile.loading('hide');
                                 $("#suAboneSonuc").empty();
-                                $("#suAboneSonuc").html('<table id="sonuclar"><tr><th>Su</th><th>Temizlik</th><th>Aydınlatma</th><th>Sağlık</th><th>Kanalizasyon</th><th>Ek Hizmetler</th></tr></table>')
+                                $("#suAboneSonuc").html('<table id="sonuclar"><tr><th>Su</th><th>Temizlik</th><th>Ayd?nlatma</th><th>Sa?l?k</th><th>Kanalizasyon</th><th>Ek Hizmetler</th></tr></table>')
                                 $.each(data,function(i,table){
-                                    $('#sontar').html('Güncel faturanızı son ödeme tarihi: ' +
+                                    $('#sontar').html('Güncel faturan?z? son ödeme tarihi: ' +
                                             table.faturacezatar[0].substr(0, 10));
                                     $("#sonuclar").append('<tr><td>'+table.su[0]+'</td><td>'+table.cop[0]+
                                             '</td><td>'+table.ayd[0]+'</td><td>'+
                                             table.saglik[0]+'</td><td>'+table.kanal[0]+'</td><td>'+table.genelBorc[0]+
                                             '</td><td>');
                                 });
-                            });
+                            });*/
                 });
             });
         </script>
