@@ -30,9 +30,9 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="394" selection-end="394" vertical-scroll-proportion="0.034274194" vertical-offset="153" max-vertical-offset="2720">
+            <state line="17" column="8" selection-start="700" selection-end="714" vertical-scroll-proportion="-0.11071429" vertical-offset="351" max-vertical-offset="2448">
               <folding>
-                <marker date="1391521190060" expanded="true" signature="1792:2476" placeholder="..." />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="webConsumer.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webConsumer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="1" selection-start="1987" selection-end="1987" vertical-scroll-proportion="-19.346153" vertical-offset="670" max-vertical-offset="1292">
+            <state line="1" column="39" selection-start="45" selection-end="45" vertical-scroll-proportion="9.961538" vertical-offset="276" max-vertical-offset="1309">
               <folding />
             </state>
           </provider>
@@ -65,6 +65,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$USER_HOME$/Desktop/webConsumer.php" />
         <option value="$PROJECT_DIR$/webConsumer.php" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
@@ -183,7 +184,11 @@
       <created>1391504016737</created>
       <updated>1391504016737</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Girne Mobile App V.2 (deneme)">
+      <created>1391521299420</created>
+      <updated>1391521299420</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -230,7 +235,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
           <folding>
-            <marker date="1391521190060" expanded="true" signature="1792:2476" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -251,16 +256,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webConsumer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="1" selection-start="1987" selection-end="1987" vertical-scroll-proportion="-19.346153" vertical-offset="670" max-vertical-offset="1292">
+        <state line="1" column="39" selection-start="45" selection-end="45" vertical-scroll-proportion="9.961538" vertical-offset="276" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="394" selection-end="394" vertical-scroll-proportion="0.034274194" vertical-offset="153" max-vertical-offset="2720">
+        <state line="17" column="8" selection-start="700" selection-end="714" vertical-scroll-proportion="-0.11071429" vertical-offset="351" max-vertical-offset="2448">
           <folding>
-            <marker date="1391521190060" expanded="true" signature="1792:2476" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
