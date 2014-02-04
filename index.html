@@ -58,13 +58,16 @@
 
                             //$.mobile.loading('hide');
                             $("#suAboneSonuc").empty();
-                            $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
-                                    '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
-                                    '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
-                                    '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
-                                    '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
-                                    '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
-                                    '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
+
+                            $.each(data,function(i,table){
+                                $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
+                                        '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
+                                        '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
+                                        '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
+                                        '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
+                                        '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
+                                        '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
+                            });
 
 
                         });
