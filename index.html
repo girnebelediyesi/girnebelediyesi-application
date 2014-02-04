@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
         //$(document).ready(function(){
-        $(document).on("pageinit","#suBorcu", function() {
+            $(document).on("pageinit","#suBorcu", function() {
             //var url='mobileapp:82/webConsumer.php';
             var query;
             $('#suAboneSorgu').click(function(event){
@@ -24,34 +24,6 @@
                 //$.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
 
                 query=$("#suBorcAboneTB").val();
-                //console.log( url+query);
-                //alert(url+query);
-/*
-                $.ajax({
-                    url: 'http://91.151.82.135:88/webConsumer.php',
-                    dataType: 'json',
-                    data: { suBorcAboneTB : query,
-                        callback : '?' }})
-                        .done(function (data){
-
-                            //alert(data.su);
-
-                            $("#suAboneSonuc").empty();
-                            $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
-                                    '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
-                                    '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
-                                    '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
-                                    '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
-                                    '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
-                                    '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
-                        });
-
-*/
-// Perform other work here ...
-
-// Set another completion function for the request above
-
-                //c/*onsole.log( query);
 
                 $.getJSON('http://91.151.82.135:88/webConsumer.php?suBorcAboneTB='+query+"&callback=?")
                         .done(function( data ) {
@@ -60,19 +32,19 @@
                             $("#suAboneSonuc").empty();
 
                             $.each(data,function(i,table){
-                                $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
-                                        '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
-                                        '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
-                                        '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
-                                        '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
-                                        '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
-                                        '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
+                                $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+table.su+'</td>' +
+                                        '<tr><td>Temizlik:</td><td>'+table.cop+'</td></tr>' +
+                                        '<tr><td>Aydınlatma:</td><td>'+table.ayd+'</td></tr>' +
+                                        '<tr><td>Sağlık:</td><td>'+table.saglik+'</td></tr>' +
+                                        '<tr><td>Kanalizasyon:</td><td>'+table.kanal+'</td></tr>' +
+                                        '<tr><td>Ek Hizmetler:</td><td>'+table.genelBorc+'</td></tr>' +
+                                        '<tr><td>Toplam:</td><td>'+table.total+'</td></tr></table>');
                             });
 
 
                         });
             });
-         });
+        });
     </script>
 </head>
 
