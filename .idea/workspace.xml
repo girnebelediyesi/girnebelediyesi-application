@@ -30,7 +30,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="8" selection-start="700" selection-end="714" vertical-scroll-proportion="-0.11071429" vertical-offset="351" max-vertical-offset="2448">
+            <state line="71" column="9" selection-start="3302" selection-end="3302" vertical-scroll-proportion="0.9392857" vertical-offset="681" max-vertical-offset="2720">
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -188,7 +188,11 @@
       <created>1391521299420</created>
       <updated>1391521299420</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Girne Mobile App V.3(deneme)">
+      <created>1391531561054</created>
+      <updated>1391531561054</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -225,7 +229,8 @@
     </option>
     <MESSAGE value="Girne Mobile App V.1 (deneme)" />
     <MESSAGE value="Girne Mobile App V.2 (deneme)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Girne Mobile App V.2 (deneme)" />
+    <MESSAGE value="Girne Mobile App V.3(deneme)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Girne Mobile App V.3(deneme)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -263,7 +268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="700" selection-end="714" vertical-scroll-proportion="-0.11071429" vertical-offset="351" max-vertical-offset="2448">
+        <state line="71" column="9" selection-start="3302" selection-end="3302" vertical-scroll-proportion="0.9392857" vertical-offset="681" max-vertical-offset="2720">
           <folding>
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

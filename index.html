@@ -26,7 +26,7 @@
                 query=$("#suBorcAboneTB").val();
                 //console.log( url+query);
                 //alert(url+query);
-
+/*
                 $.ajax({
                     url: 'http://91.151.82.135:88/webConsumer.php',
                     dataType: 'json',
@@ -46,14 +46,30 @@
                                     '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
                         });
 
-
+*/
 // Perform other work here ...
 
 // Set another completion function for the request above
 
                 //c/*onsole.log( query);
+
+                $.getJSON('http://91.151.82.135:88/webConsumer.php?suBorcAboneTB='+query+"&callback=?")
+                        .done(function( data ) {
+
+                            //$.mobile.loading('hide');
+                            $("#suAboneSonuc").empty();
+                            $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
+                                    '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
+                                    '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
+                                    '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
+                                    '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
+                                    '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
+                                    '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
+
+
+                        });
             });
-        });
+         });
     </script>
 </head>
 
