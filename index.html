@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="lib/jquery-1.6.4.js"></script>
+        <script src="lib/jquery.mobile-1.1.0.js"></script>
+        <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet">
+        <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div data-role="page" id="anaEkran" data-theme="b">
+            <div data-role="header">
+                <h1>Girne Belediyesi</h1>
+            </div>
+            <div data-role="content">
+                <img id="logo" src="images/Logo_last.png" width="100" height="100" style="display: block; margin: 0 auto">
+                <a data-role="button" data-transition="flip">Borç Sorgulama</a>
+                <a data-role="button" href="http://213.142.146.66/girne/" data-transition="flip">Online İmar Rehberi</a>
+            </div>
+            <div data-role="footer">
+                <h1>Cep Uygulaması</h1>
+            </div>
+        </div>
+        <div data-role="page" id="borcSorgulama" data-theme="b">
+            <div data-role="header">
+                <h1>Borç Sorgulama</h1>
+            </div>
+            <div data-role="content">
+                <a data-role="button" data-transition="flip">Emlak Borcu Sorgula</a>
+                <a data-role="button" data-transition="flip">Su Borcu Sorgula</a>
+            </div>
+            <div data-role="footer">
+                <a data-role="button" data-transition="turn" data-theme="b">Geri</a>
+            </div>
+        </div>
+        <div data-role="page" id="emlakBorcu" data-theme="b">
+            <div data-role="header">
+                <h1>Emlak Borcu</h1>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="text1">TGE No ile sorgulama:</label>
+                    <input type="text" id="text1">
+                </div>
+                <a data-role="button">Sorgula</a>
+                <div class="div-widget" id="emlakTgeDiv"></div>
+                <div data-role="fieldcontain">
+                    <label for="text2">Kimlik No ile sorgulama:</label>
+                    <input type="text" id="text2">
+                </div>
+                <a data-role="button">Sorgula</a>
+                <div class="div-widget" id="emlaKimlikDiv"></div>
+            </div>
+            <div data-role="footer">
+                <a data-role="button" data-transition="turn" data-theme="b">Geri</a>
+            </div>
+        </div>
+        <div data-role="page" id="suBorcu" data-theme="b">
+            <div data-role="header">
+                <h1>Su Borcu</h1>
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <label for="text3">Abone No ile sorgulama</label>
+                    <input type="text" id="text3">
+                </div>
+                <a data-role="button">Sorgula</a>
+                <div class="div-widget"></div>
+                <div data-role="fieldcontain">
+                    <label for="text4">Kimlik No ile sorgulama</label>
+                    <input type="text" id="text4">
+                </div>
+                <a data-role="button">Sorgula</a>
+                <div class="div-widget" id="suDiv">
+                    <select data-native-menu="false" id="aboneNos"></select>
+                    <a data-role="button" data-inline="true">Sorgula</a>
+                    <div class="div-widget" id="suBorclar"></div>
+                </div>
+            </div>
+            <div data-role="footer">
+                <a data-role="button" data-transition="turn" data-theme="b">Geri</a>
+            </div>
+        </div>
+    </body>
+
+</html>
