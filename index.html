@@ -6,39 +6,42 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>title</title>
+    <title>Girne Cep App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="lib/jquery-1.6.4.js"></script>
-    <script src="lib/jquery.mobile-1.1.0.js"></script>
-    <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet">
-    <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet">
-
+	
+	<link rel="stylesheet" href="themes/umut.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.structure-1.4.0.min.css" />
+	<script src="lib/jquery-1.11.0.min.js"></script>
+	<script src="lib/jquery.mobile-1.4.0.min.js"></script>
+    
+	
+	
+	
     <script type="text/javascript">
         //$(document).ready(function(){
             $(document).on("pageinit","#suBorcu", function() {
-            //var url='mobileapp:82/webConsumer.php';
             var query;
             $('#suAboneSorgu').click(function(event){
 
 
-                //$.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
+                $.mobile.loading('show', {theme:"d", text:"Lütfen Bekleyin...", textVisible: true});
 
                 query=$("#suBorcAboneTB").val();
 
                 $.getJSON('http://91.151.82.135:88/webConsumer.php?suBorcAboneTB='+query+"&callback=?")
                         .done(function( data ) {
 
-                            //$.mobile.loading('hide');
+                            $.mobile.loading('hide');
                             $("#suAboneSonuc").empty();
 
                             $.each(data,function(i,table){
-                                $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+table.su+'</td>' +
-                                        '<tr><td>Temizlik:</td><td>'+table.cop+'</td></tr>' +
-                                        '<tr><td>Aydınlatma:</td><td>'+table.ayd+'</td></tr>' +
-                                        '<tr><td>Sağlık:</td><td>'+table.saglik+'</td></tr>' +
-                                        '<tr><td>Kanalizasyon:</td><td>'+table.kanal+'</td></tr>' +
-                                        '<tr><td>Ek Hizmetler:</td><td>'+table.genelBorc+'</td></tr>' +
-                                        '<tr><td>Toplam:</td><td>'+table.total+'</td></tr></table>');
+                                $("#suAboneSonuc").html('<table><tr><td>Su:</td><td>'+data.su+'</td>' +
+                                        '<tr><td>Temizlik:</td><td>'+data.cop+'</td></tr>' +
+                                        '<tr><td>Aydınlatma:</td><td>'+data.ayd+'</td></tr>' +
+                                        '<tr><td>Sağlık:</td><td>'+data.saglik+'</td></tr>' +
+                                        '<tr><td>Kanalizasyon:</td><td>'+data.kanal+'</td></tr>' +
+                                        '<tr><td>Ek Hizmetler:</td><td>'+data.genelBorc+'</td></tr>' +
+                                        '<tr><td>Toplam:</td><td>'+data.total+'</td></tr></table>');
                             });
 
 
